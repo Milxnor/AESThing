@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetAes", "GetAes\GetAes.vcxproj", "{327232F6-E6C8-4CD5-A887-58AF7C6CC4F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{327232F6-E6C8-4CD5-A887-58AF7C6CC4F4}.Debug|x64.ActiveCfg = Debug|x64
+		{327232F6-E6C8-4CD5-A887-58AF7C6CC4F4}.Debug|x64.Build.0 = Debug|x64
+		{327232F6-E6C8-4CD5-A887-58AF7C6CC4F4}.Release|x64.ActiveCfg = Release|x64
+		{327232F6-E6C8-4CD5-A887-58AF7C6CC4F4}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF2EAAE1-0FBF-425E-8596-3CD8C3E49E10}
+	EndGlobalSection
+EndGlobal
