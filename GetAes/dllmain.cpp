@@ -88,7 +88,8 @@ DWORD WINAPI Main(LPVOID dll)
 
     AllocConsole();
 
-    freopen_s(&fptr, "CONOUT$", "w", stdout);
+	// freopen_s(&fptr, "CONOUT$", "w", stdout);
+	freopen_s(&fptr, "aeslogs.txt", "w", stdout);
 
     auto ascii = sk(R"(
      ___       _______     _______.  _______ .______          ___      .______   .______    _______ .______      
@@ -107,7 +108,14 @@ DWORD WINAPI Main(LPVOID dll)
 	auto REKAddr = FindPattern("48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 45 20 49 8B D8 48 8B F2");
 	FPakPlatformFile::RegisterEncryptionKey = decltype(FPakPlatformFile::RegisterEncryptionKey)(REKAddr);
 
-	MH_CreateHook((void*)REKAddr, FPakPlatformFile::RegisterEncryptionKeyDetour, (PVOID*)(&FPakPlatformFile::RegisterEncryptionKey));
+	// I commented this out because the function like doesn't exist
+	// auto EDDAddr = FindPattern("");
+	// FAES::EncryptData = decltype(FAES::EncryptData)(EDDAddr);
+
+	// MH_CreateHook((PVOID)EDDAddr, FAES::EncryptDataDetour, (PVOID*)&FAES::EncryptData);
+	// MH_EnableHook((PVOID)EDDAddr);
+
+	MH_CreateHook((void*)REKAddr, FPakPlatformFile::RegisterEncryptionKeyDetour, (PVOID*)&FPakPlatformFile::RegisterEncryptionKey);
 	MH_EnableHook((void*)REKAddr);
 
     // FreeLibraryAndExitThread((HMODULE)dll, 0);
